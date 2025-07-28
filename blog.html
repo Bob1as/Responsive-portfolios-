@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Blog</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  background: #f8f9fa;
+  color: #333;
+}
+
+header {
+  background: linear-gradient(to right, #0c121e, #111);
+  /* background-color: #0f1b39; */
+  color: white;
+  padding: 2rem;
+  text-align: center;
+}
+
+.blog-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 2rem;
+  gap: 2rem;
+}
+
+.blog-card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  width: 300px;
+  padding: 1rem;
+  position: relative;
+}
+
+.blog-card img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.blog-card h2 {
+  margin-top: 1rem;
+  font-size: 1.3rem;
+}
+
+.blog-card .full-content {
+  display: none;
+  margin-top: 0.5rem;
+  color: #555;
+}
+
+.read-more {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  margin-top: 0.8rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.read-more:hover {
+  background-color: #0056b3;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #343a40;
+  color: white;
+  margin-top: 2rem;
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1>My Blog</h1>
+    <p>Sharing ideas, tips, and tutorials</p>
+  </header>
+
+  <main class="blog-container">
+    <div class="blog-card">
+      <img src="https://source.unsplash.com/400x200/?coding" alt="Blog 1" />
+      <h2>Getting Started with HTML</h2>
+      <p class="preview">Learn the basics of HTML for structuring websites.</p>
+      <p class="full-content">HTML (HyperText Markup Language) is the standard language for creating web pages. It forms the structure of web content by using elements like headings, paragraphs, links, and images.</p>
+      <button class="read-more">Read More</button>
+    </div>
+
+    <div class="blog-card">
+      <img src="https://source.unsplash.com/400x200/?javascript" alt="Blog 2" />
+      <h2>JavaScript Basics</h2>
+      <p class="preview">Add interactivity to your websites using JavaScript.</p>
+      <p class="full-content">JavaScript is a scripting language that helps make websites interactive. You can respond to user actions, manipulate DOM elements, and even build games and web apps using it.</p>
+      <button class="read-more">Read More</button>
+    </div>
+  </main>
+
+  <!-- <footer>
+    <p>&copy; 2025 My Blog. All rights reserved.</p>
+  </footer> -->
+
+  <script>
+    document.querySelectorAll(".read-more").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const content = btn.previousElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+      btn.innerText = "Read More";
+    } else {
+      content.style.display = "block";
+      btn.innerText = "Read Less";
+    }
+  });
+});
+
+  </script>
+</body>
+</html>

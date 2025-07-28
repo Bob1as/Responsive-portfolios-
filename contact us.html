@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+  background-color: black;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+h1 {
+  text-align: center;
+  color: white;
+}
+
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-top: 30px;
+  justify-content: space-between;
+}
+
+.contact-details, .contact-form {
+  flex: 1 1 400px;
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.contact-details h2 {
+  color: #0077cc;
+}
+
+label {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  resize: vertical;
+}
+
+button {
+  margin-top: 20px;
+  background-color: #0077cc;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #005fa3;
+}
+
+#statusMsg {
+  margin-top: 15px;
+  color: green;
+  font-weight: bold;
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Contact Us</h1>
+    
+    <div class="contact-container">
+      <div class="contact-details">
+        <h2>Get in Touch</h2>
+        <p><strong>Email:</strong> bobiseverywhere21@gmail.com</p>
+        <p><strong>Phone:</strong> +91 1234567890</p>
+        <p><strong>Address:</strong> Mumbai, Maharashtra, India</p>
+      </div>
+
+      <div class="contact-form">
+        <form id="contactForm">
+          <label for="name">Name</label>
+          <input type="text" id="name" placeholder="Your Name" required />
+
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="Your Email" required />
+
+          <label for="message">Message</label>
+          <textarea id="message" placeholder="Your Message" rows="4" required></textarea>
+
+          <button type="submit">Send Message</button>
+        </form>
+        <p id="statusMsg"></p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("contactForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const name = document.getElementById("name").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const message = document.getElementById("message").value.trim();
+  const statusMsg = document.getElementById("statusMsg");
+
+  if (name === "" || email === "" || message === "") {
+    statusMsg.textContent = "Please fill in all fields.";
+    statusMsg.style.color = "red";
+    return;
+  }
+
+  statusMsg.textContent = "Message sent successfully!";
+  statusMsg.style.color = "green";
+
+  // Optionally clear form
+  document.getElementById("contactForm").reset();
+});
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,162 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Experience</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: black;
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(to right, #0c121e, #111);
+      /* background: #0f1b39; */
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .timeline {
+      max-width: 800px;
+      margin: 3rem auto;
+      padding: 0 1rem;
+      position: relative;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 20px;
+      top: 0;
+      width: 4px;
+      height: 100%;
+      background: #0d6efd;
+    }
+
+    .timeline-item {
+      margin-left: 60px;
+      margin-bottom: 3rem;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease-out;
+    }
+
+    .timeline-item.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .timeline-content {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .timeline-content h2 {
+      color: #0d6efd;
+      margin-bottom: 0.5rem;
+    }
+
+    .timeline-content h4 {
+      color: #555;
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+
+    footer {
+      background: #0d6efd;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 3rem;
+      /* display: inline; */
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>My Experience</h1>
+    <p>A timeline of my professional journey</p>
+  </header>
+
+  <section class="timeline" id="timeline">
+    <!-- <div class="timeline-item">
+      <div class="timeline-content">
+        <h2>Frontend Developer</h2>
+        <h4>WebTech Solutions - Jan 2023 to Present</h4>
+        <p>Designed and developed responsive websites using HTML, CSS, JavaScript, and React. Improved page load times
+          by 30% and collaborated with UI/UX teams.</p>
+      </div>
+    </div> -->
+
+    <div class="timeline-item">
+      <div class="timeline-content">
+        <h2>Intern - Web Development</h2>
+        <h4>CodeSoft - July 2025 to july 2025</h4>
+        <p> creating a responsive portfolio webisite using HTML, CSS, JavaScript, and React. Improved page load times</p>
+      </div>
+    </div>
+
+    <!-- <div class="timeline-item">
+      <div class="timeline-content">
+        <h2>Freelancer</h2>
+        <h4>Remote - 2021 to 2022</h4>
+        <p>Worked on small business websites including portfolio sites and landing pages. Gained real-world client
+          communication experience.</p>
+      </div> -->
+    </div>
+  </section>
+  <!-- <div class="footer"> -->
+
+  
+  <!-- <footer>
+    <p>&copy; 2025 My Portfolio. All rights reserved.</p>
+  </footer> -->
+<!-- </div> -->
+
+  <script>
+    // Fade-in on scroll
+    window.addEventListener('scroll', () => {
+      const items = document.querySelectorAll('.timeline-item');
+      items.forEach(item => {
+        const boxTop = item.getBoundingClientRect().top;
+        const trigger = window.innerHeight - 100;
+        if (boxTop < trigger) {
+          item.classList.add('show');
+        }
+      });
+    });
+
+    // Initial check
+    document.querySelectorAll('.timeline-item').forEach(item => {
+      const boxTop = item.getBoundingClientRect().top;
+      const trigger = window.innerHeight - 100;
+      if (boxTop < trigger) {
+        item.classList.add('show');
+      }
+    });
+
+  </script>
+</body>
+
+</html> 

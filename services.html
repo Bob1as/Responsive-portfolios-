@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Services</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+}
+
+header {
+  background: linear-gradient(to right, #0c121e, #111);
+  /* background-color: #0f1b39; */
+  color: #fff;
+  padding: 2rem;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 3rem;
+  background-color: black;
+}
+
+.service-card {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+}
+
+.icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+footer {
+  background-color: #0d6efd;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Our Services</h1>
+    <p>We provide top-notch digital solutions to grow your business</p>
+  </header>
+
+  <section class="services" id="services">
+    <div class="service-card">
+      <i class="icon">💻</i>
+      <h2>Web Development</h2>
+      <p>We build responsive and engaging websites tailored to your business needs.</p>
+    </div>
+
+    <div class="service-card">
+      <i class="icon">📱</i>
+      <h2>App Development</h2>
+      <p>Get powerful and scalable mobile apps for Android and iOS platforms.</p>
+    </div>
+
+    <div class="service-card">
+      <i class="icon">📈</i>
+      <h2>Digital Marketing</h2>
+      <p>Boost your reach and visibility through SEO, social media & PPC campaigns.</p>
+    </div>
+
+    <div class="service-card">
+      <i class="icon">🎨</i>
+      <h2>UI/UX Design</h2>
+      <p>Create engaging user experiences with clean and modern interface designs.</p>
+    </div>
+
+    <div class="service-card">
+      <i class="icon">☁️</i>
+      <h2>Cloud Services</h2>
+      <p>Migrate, manage, and scale your applications with cloud infrastructure.</p>
+    </div>
+
+    <div class="service-card">
+      <i class="icon">🔐</i>
+      <h2>Cybersecurity</h2>
+      <p>Protect your data and systems from threats with our security solutions.</p>
+    </div>
+  </section>
+
+  <!-- <footer>
+    <p>&copy; 2025 Digital Solutions. All rights reserved.</p>
+  </footer> -->
+
+  <script >
+    // Simple scroll animation
+window.addEventListener('scroll', () => {
+  const cards = document.querySelectorAll('.service-card');
+  cards.forEach(card => {
+    const rect = card.getBoundingClientRect();
+    if (rect.top < window.innerHeight - 50) {
+      card.style.opacity = 1;
+      card.style.transform = 'translateY(0)';
+    }
+  });
+});
+
+// Initial state
+document.querySelectorAll('.service-card').forEach(card => {
+  card.style.opacity = 0;
+  card.style.transform = 'translateY(20px)';
+});
+
+  </script>
+</body>
+</html> 
